@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="w37-07-nrn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Stack Coordinator View Controller-->
+        <scene sceneID="dla-hW-VUr">
+            <objects>
+                <viewController storyboardIdentifier="StackCoordinator" id="w37-07-nrn" customClass="StackCoordinatorViewController" customModule="eRaceLeague_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8XM-Jt-d8f">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i0a-h8-tfr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="567"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="nza-zK-fmg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="nza-zK-fmg" firstAttribute="top" secondItem="i0a-h8-tfr" secondAttribute="top" id="0JO-tL-PH4"/>
+                                    <constraint firstItem="nza-zK-fmg" firstAttribute="centerY" secondItem="i0a-h8-tfr" secondAttribute="centerY" id="4Kb-7B-D7G"/>
+                                    <constraint firstItem="nza-zK-fmg" firstAttribute="width" secondItem="i0a-h8-tfr" secondAttribute="width" id="aCD-5K-Ap1"/>
+                                    <constraint firstAttribute="trailing" secondItem="nza-zK-fmg" secondAttribute="trailing" id="g7R-Cl-dUU"/>
+                                    <constraint firstAttribute="bottom" secondItem="nza-zK-fmg" secondAttribute="bottom" id="okc-bS-EGD"/>
+                                    <constraint firstItem="nza-zK-fmg" firstAttribute="leading" secondItem="i0a-h8-tfr" secondAttribute="leading" id="pMD-Sk-10c"/>
+                                </constraints>
+                            </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxT-of-muu">
+                                <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="W0l-0z-Oud"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="i0a-h8-tfr" firstAttribute="top" secondItem="aGa-M6-qOx" secondAttribute="top" id="5BN-CV-eBY"/>
+                            <constraint firstItem="wxT-of-muu" firstAttribute="leading" secondItem="aGa-M6-qOx" secondAttribute="leading" id="AE5-Yv-BC3"/>
+                            <constraint firstItem="aGa-M6-qOx" firstAttribute="trailing" secondItem="wxT-of-muu" secondAttribute="trailing" id="MqQ-0B-fHh"/>
+                            <constraint firstItem="wxT-of-muu" firstAttribute="bottom" secondItem="aGa-M6-qOx" secondAttribute="bottom" id="VBA-Rl-J0P"/>
+                            <constraint firstItem="wxT-of-muu" firstAttribute="top" secondItem="i0a-h8-tfr" secondAttribute="bottom" id="fNY-4B-FhN"/>
+                            <constraint firstItem="i0a-h8-tfr" firstAttribute="trailing" secondItem="aGa-M6-qOx" secondAttribute="trailing" id="q57-yr-QYY"/>
+                            <constraint firstItem="i0a-h8-tfr" firstAttribute="leading" secondItem="aGa-M6-qOx" secondAttribute="leading" id="v3w-ZP-9lS"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="aGa-M6-qOx"/>
+                    </view>
+                    <connections>
+                        <outlet property="footerHeight" destination="W0l-0z-Oud" id="wsF-jX-Nf1"/>
+                        <outlet property="footerView" destination="wxT-of-muu" id="vFW-BW-ZQc"/>
+                        <outlet property="stackView" destination="nza-zK-fmg" id="A3j-fz-pxW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ytj-pj-4NJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="164.16791604197903"/>
+        </scene>
+    </scenes>
+</document>
