@@ -51,7 +51,7 @@ public class FlowController: NSObject {
     private let viewModel: FlowViewModelProtocol
     private let navigationController: UINavigationController
 
-    init(viewModel: FlowViewModelProtocol, navigationController: UINavigationController? = nil) {
+    public init(viewModel: FlowViewModelProtocol, navigationController: UINavigationController? = nil) {
         self.viewModel = viewModel
         
         if let navigationController = navigationController {
