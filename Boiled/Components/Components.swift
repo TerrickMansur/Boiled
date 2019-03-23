@@ -41,8 +41,9 @@ public extension Componentable {
             guard var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
             fatalError("Could not create component") }
 
+        component.loadViewIfNeeded()
         component.viewModel = viewModelProvider(component)
-
+        
         return component
     }
 }
