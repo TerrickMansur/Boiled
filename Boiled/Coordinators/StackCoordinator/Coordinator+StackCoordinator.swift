@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension Coordinator {
+public extension Coordinator {
     public static func stackCoordinator(coordinator: StackCoordinatorProtocol) -> StackCoordinatorViewController {
 
         guard let stackCoordinatorViewController = UIStoryboard.init(name: "StackCoordinator", bundle: Bundle.main).instantiateViewController(withIdentifier: "StackCoordinator") as? StackCoordinatorViewController else {
