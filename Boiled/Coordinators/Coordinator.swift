@@ -9,12 +9,12 @@ import Foundation
 
 enum Coordinator {}
 
-protocol ProvidesFooterComponent {
+public protocol ProvidesFooterComponent {
     var footer: UIViewController? { get }
     var footerHeight: CGFloat { get }
 }
 
-protocol HasFooterViewProtocol {
+public protocol HasFooterViewProtocol {
     
     var footerView: UIView! { get }
     var footerHeight: NSLayoutConstraint! { get }

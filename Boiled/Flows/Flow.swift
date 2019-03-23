@@ -8,4 +8,4 @@
 
 import Foundation
 
-enum Flow { }
+public enum Flow { }

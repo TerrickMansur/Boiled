@@ -9,7 +9,7 @@
 import UIKit
 import ReactiveKit
 
-protocol FlowViewModelProtocol {
+public protocol FlowViewModelProtocol {
     var root: UIViewController { get }
     var show: SafePublishSubject<UIViewController> { get }
     var present: SafePublishSubject<FlowController.Presentation> { get }
@@ -17,9 +17,9 @@ protocol FlowViewModelProtocol {
     var goBack: SafePublishSubject<Void> { get }
 }
 
-class FlowController: NSObject {
+public class FlowController: NSObject {
     
-    struct Presentation {
+    public struct Presentation {
         
         let viewController: UIViewController
         let animated: Bool
@@ -32,7 +32,7 @@ class FlowController: NSObject {
         }
     }
     
-    struct Dismissal {
+    public struct Dismissal {
         
         let animated: Bool
         let completion: (() -> Void)?
@@ -45,12 +45,12 @@ class FlowController: NSObject {
     
     public let root: UIViewController
 
-    private let navigationController: UINavigationController
     
     // # MARK: Private Attributes
 
     private let viewModel: FlowViewModelProtocol
-    
+    private let navigationController: UINavigationController
+
     init(viewModel: FlowViewModelProtocol, navigationController: UINavigationController? = nil) {
         self.viewModel = viewModel
         

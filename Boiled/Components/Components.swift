@@ -8,14 +8,14 @@
 
 import UIKit
 
-class Components {
+public class Components {
 
     static func viewController(storyboardFile: String) -> UIViewController {
         return UIStoryboard.init(name: storyboardFile, bundle: Bundle.main).instantiateViewController(withIdentifier: storyboardFile)
     }    
 }
 
-protocol Componentable {
+public protocol Componentable {
     
     associatedtype ViewModelType
     associatedtype StyleType
@@ -26,9 +26,9 @@ protocol Componentable {
     static var storyboard: String { get }
 }
 
-extension Componentable {
+public extension Componentable {
     
-    static func create<GenericVC: Componentable>(viewModel: GenericVC.ViewModelType, style: GenericVC.StyleType) -> GenericVC where GenericVC : UIViewController {
+    public static func create<GenericVC: Componentable>(viewModel: GenericVC.ViewModelType, style: GenericVC.StyleType) -> GenericVC where GenericVC : UIViewController {
         
         guard var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
             fatalError("Could not create component")
@@ -39,7 +39,7 @@ extension Componentable {
         return component
     }
     
-    static func create<GenericVC: Componentable>(
+    public static func create<GenericVC: Componentable>(
         style: GenericVC.StyleType,
         viewModelProvider: (_ GenericVC: GenericVC) -> (GenericVC.ViewModelType)) -> GenericVC where GenericVC : UIViewController {
 

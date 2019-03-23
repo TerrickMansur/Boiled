@@ -9,7 +9,7 @@
 import UIKit
 
 extension Coordinator {
-    static func stackCoordinator(coordinator: StackCoordinatorProtocol) -> StackCoordinatorViewController {
+    public static func stackCoordinator(coordinator: StackCoordinatorProtocol) -> StackCoordinatorViewController {
 
         guard let stackCoordinatorViewController = UIStoryboard.init(name: "StackCoordinator", bundle: Bundle.main).instantiateViewController(withIdentifier: "StackCoordinator") as? StackCoordinatorViewController else {
             fatalError("Could not create Coordinator")
