@@ -28,9 +28,12 @@ public extension Componentable {
     
     public static func create<GenericVC: Componentable>(viewModel: GenericVC.ViewModelType) -> GenericVC where GenericVC : UIViewController {
         
-        guard var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
+        guard  let classType = NSClassFromString(self.storyboard),
+            var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle(for: classType)).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
             fatalError("Could not create component")
         }
+        
+        component.loadViewIfNeeded()
         component.viewModel = viewModel
         
         return component
@@ -38,7 +41,8 @@ public extension Componentable {
     
     public static func create<GenericVC: Componentable>(viewModelProvider: (_ GenericVC: GenericVC) -> (GenericVC.ViewModelType)) -> GenericVC where GenericVC : UIViewController {
 
-            guard var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle.main).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
+        guard let classType = NSClassFromString(self.storyboard),
+                var component = (UIStoryboard.init(name: self.storyboard, bundle: Bundle(for: classType)).instantiateViewController(withIdentifier: self.storyboard) as? GenericVC) else {
             fatalError("Could not create component") }
 
         component.loadViewIfNeeded()
