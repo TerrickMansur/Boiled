@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Coordinator {}
+public enum Coordinator {}
 
 public protocol ProvidesFooterComponent {
     var footer: UIViewController? { get }
